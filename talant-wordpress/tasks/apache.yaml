@@ -1,0 +1,12 @@
+---
+- name: install apache 
+  package:
+    name: httpd
+    state: latest
+
+- name: start and enable apache
+  systemd:
+    name: httpd
+    state: started
+    enabled: true
+    

@@ -1,2 +1,3 @@
 ---
 # tasks file for talant-wordpress
+- import_tasks: apache.yaml
