@@ -9,4 +9,12 @@
     name: httpd
     state: started
     enabled: true
-    
+
+- name: get the ip address of the server
+  shell: "ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'"
+  register: ip_address_of_server
+
+- name: show ip address of server
+  debug:
+    var: ip_address_of_server
+
